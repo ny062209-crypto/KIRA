@@ -5,6 +5,7 @@ Created by KIRA Gaming
 
 import os
 import asyncio
+import base64
 from typing import Optional, List
 from fastapi import FastAPI, Header, HTTPException, UploadFile, File, Form, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -22,7 +23,7 @@ from telethon.errors import (
     ApiIdInvalidError
 )
 
-app = FastAPI(title="KIRA Auto Post Engine", version="1.0.0")
+app = FastAPI(title="KIRA Auto Post Engine", version="1.1.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -168,33 +169,51 @@ async def load_chats(req: LoadChatsRequest):
 
     try:
         dialogs = await client.get_dialogs(limit=300)
+        sem = asyncio.Semaphore(8)
+
+        async def fetch_photo(entity):
+            # Small thumbnail of the group/channel profile photo (base64 JPEG)
+            async with sem:
+                try:
+                    data = await asyncio.wait_for(
+                        client.download_profile_photo(entity, file=bytes, download_big=False),
+                        timeout=15
+                    )
+                    if data:
+                        return base64.b64encode(data).decode("ascii")
+                except Exception:
+                    pass
+            return ""
+
+        selected = [d for d in dialogs if d.is_group or d.is_channel]
+        photos = await asyncio.gather(*[fetch_photo(d.entity) for d in selected])
+
         chat_list = []
-        for d in dialogs:
-            if d.is_group or d.is_channel:
-                entity = d.entity
-                chat_type = "group"
-                if getattr(entity, "broadcast", False):
-                    chat_type = "channel"
-                elif getattr(entity, "megagroup", False):
-                    chat_type = "supergroup"
+        for d, photo in zip(selected, photos):
+            entity = d.entity
+            chat_type = "group"
+            if getattr(entity, "broadcast", False):
+                chat_type = "channel"
+            elif getattr(entity, "megagroup", False):
+                chat_type = "supergroup"
 
-                can_post = True
-                # Check permissions
-                if getattr(entity, "restricted", False):
-                    can_post = False
-                if getattr(entity, "broadcast", False) and not getattr(entity, "creator", False) and not getattr(entity, "admin_rights", None):
-                    can_post = False
+            can_post = True
+            if getattr(entity, "restricted", False):
+                can_post = False
+            if getattr(entity, "broadcast", False) and not getattr(entity, "creator", False) and not getattr(entity, "admin_rights", None):
+                can_post = False
 
-                members = getattr(entity, "participants_count", 0) or 0
+            members = getattr(entity, "participants_count", 0) or 0
 
-                chat_list.append({
-                    "id": d.id,
-                    "title": d.title,
-                    "username": getattr(entity, "username", None) or "",
-                    "type": chat_type,
-                    "can_post": can_post,
-                    "member_count": members
-                })
+            chat_list.append({
+                "id": d.id,
+                "title": d.title,
+                "username": getattr(entity, "username", None) or "",
+                "type": chat_type,
+                "can_post": can_post,
+                "member_count": members,
+                "photo": photo
+            })
 
         await client.disconnect()
         return {"status": "ok", "chats": chat_list}
