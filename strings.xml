@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KIRA Auto Post</string>
+    <string name="creator_khmer">បង្កើតឡើងដោយ KIRA Gaming</string>
+    <string name="creator_en">Create by KIRA Gaming</string>
+    
+    <!-- Welcome Screen -->
+    <string name="welcome_title">សូមស្វាគមន៍មកកាន់ KIRA Auto Post! 🚀</string>
+    <string name="welcome_subtitle">ផុសរូបភាព វីដេអូ ឯកសារ និងអត្ថបទចូលក្រុម Telegram របស់អ្នកបានយ៉ាងងាយស្រួល។</string>
+    <string name="btn_start">ចាប់ផ្តើម</string>
+    <string name="terms_title">លក្ខខណ្ឌប្រើប្រាស់ Telegram និងការទទួលខុសត្រូវ</string>
+    <string name="terms_body">ការផុសច្រើនលឿនអាចធ្វើឱ្យគណនីត្រូវបានកំណត់ ឬ Ban សូមប្រើសម្រាប់ក្រុមរបស់អ្នក ហើយកុំផុសច្រើនពេក។ កម្មវិធីនេះផ្តល់ជូនដើម្បីជួយសម្រួលការងារផ្សព្វផ្សាយផ្ទាល់ខ្លួន។</string>
+    <string name="terms_checkbox">ខ្ញុំយល់ព្រមប្រើកម្មវិធីនេះសម្រាប់តែក្រុម ឬប៉ុស្តិ៍ផ្ទាល់ខ្លួនរបស់ខ្ញុំ ឬកន្លែងដែលមានការអនុញ្ញាតប៉ុណ្ណោះ</string>
+    
+    <!-- Bottom Navigation -->
+    <string name="nav_home">ទំព័រដើម</string>
+    <string name="nav_accounts">គណនី</string>
+    <string name="nav_groups">ក្រុម</string>
+    <string name="nav_post">ផុស</string>
+    <string name="nav_reports">របាយការណ៍</string>
+    <string name="nav_settings">ការកំណត់</string>
+    
+    <!-- Account Screen -->
+    <string name="add_account">បន្ថែមគណនី</string>
+    <string name="api_id">API ID</string>
+    <string name="api_hash">API Hash</string>
+    <string name="phone_number">លេខទូរស័ព្ទ (ឧ. +855...)</string>
+    <string name="send_code">ផ្ញើលេខកូដ</string>
+    <string name="auth_code">លេខកូដសម្ងាត់ Telegram</string>
+    <string name="password_2fa">ពាក្យសម្ងាត់ 2FA (ប្រសិនបើមាន)</string>
+    <string name="btn_login">ចូល</string>
+    <string name="account_list">បញ្ជីគណនី Telegram</string>
+    <string name="no_accounts">មិនទាន់មានគណនីនៅឡើយទេ។ សូមចុចប៊ូតុងខាងលើដើម្បីបន្ថែម។</string>
+    <string name="relogin">ចូលម្តងទៀត</string>
+    <string name="remove">លុបចេញ</string>
+    
+    <!-- Groups Screen -->
+    <string name="load_all_chats">ទាញយកក្រុមទាំងអស់</string>
+    <string name="search_groups">ស្វែងរកក្រុម ឬប៉ុស្តិ៍...</string>
+    <string name="filter_all">ទាំងអស់</string>
+    <string name="filter_group">ក្រុមធម្មតា</string>
+    <string name="filter_supergroup">ក្រុមធំ</string>
+    <string name="filter_channel">ប៉ុស្តិ៍ (Channel)</string>
+    <string name="select_all">ជ្រើសទាំងអស់</string>
+    <string name="deselect_all">ដោះជ្រើសរើសទាំងអស់</string>
+    <string name="cannot_post_mark">គ្មានសិទ្ធិផុស</string>
+    <string name="save_list">រក្សាទុកបញ្ជី</string>
+    <string name="no_groups_loaded">សូមចុច «ទាញយកក្រុមទាំងអស់» ដើម្បីផ្ទុកបញ្ជីក្រុមពីគណនីរបស់អ្នក។</string>
+    
+    <!-- Post Screen -->
+    <string name="post_content_hint">សរសេរអត្ថបទសាររបស់អ្នកនៅទីនេះ...</string>
+    <string name="add_photo">រូបភាព</string>
+    <string name="add_video">វីដេអូ</string>
+    <string name="add_document">ឯកសារ</string>
+    <string name="post_preview">មើលគំរូសារ</string>
+    <string name="schedule_post">កំណត់ពេលផុស</string>
+    <string name="post_now">ផុសឥឡូវ</string>
+    <string name="test_mode">តេស្តតែប៉ុណ្ណោះ (ផ្ញើទៅកាន់ Saved Messages)</string>
+    <string name="delay_seconds">គម្លាតពេលផុស (វិនាទី)</string>
+    <string name="delay_warning">ការផុសច្រើនលឿនអាចធ្វើឱ្យគណនីត្រូវបានកំណត់ ឬ Ban សូមប្រើសម្រាប់ក្រុមរបស់អ្នក ហើយកុំផុសច្រើនពេក</string>
+    <string name="min_delay_warning">គម្លាតពេលអប្បបរមាគឺ 10 វិនាទីដើម្បីសុវត្ថិភាពគណនី</string>
+    
+    <!-- Reports Screen -->
+    <string name="live_progress">វឌ្ឍនភាពកំពុងផុស</string>
+    <string name="total_success">ជោគជ័យ</string>
+    <string name="total_failed">បរាជ័យ</string>
+    <string name="total_skipped">រំលង</string>
+    <string name="retry_failed_only">Retry failed only</string>
+    <string name="export_csv">ទាញយករបាយការណ៍ (CSV)</string>
+    <string name="history">ប្រវត្តិនៃការផុស</string>
+    
+    <!-- Settings Screen -->
+    <string name="settings_title">ការកំណត់ប្រព័ន្ធ</string>
+    <string name="default_delay">គម្លាតពេលលំនាំដើម (40 វិនាទី)</string>
+    <string name="random_delay">បន្ថែមគម្លាតចៃដន្យ (+/- 5 វិនាទី)</string>
+    <string name="max_per_hour">ចំនួនផុសអតិបរមាក្នុងមួយម៉ោង</string>
+    <string name="daily_limit">កម្រិតកំណត់ប្រចាំថ្ងៃ</string>
+    <string name="quiet_hours">ម៉ោងផ្អាកផុស (Quiet Hours)</string>
+    <string name="app_lock">សោការពារកម្មវិធី (PIN / ក្រយៅដៃ)</string>
+    <string name="backend_server_url">អាសយដ្ឋាន Server Telegram Engine (Telethon)</string>
+    <string name="backend_server_token">Security Token របស់ Server</string>
+    <string name="telegram_guide_title">របៀបយក API ID &amp; API Hash</string>
+    <string name="telegram_guide_content">1. ចូលទៅកាន់គេហទំព័រ https://my.telegram.org\n2. បញ្ចូលលេខទូរស័ព្ទ Telegram និងលេខកូដបញ្ជាក់\n3. ចុចលើ API development tools\n4. បង្កើត App ថ្មី និងចម្លង api_id និង api_hash មកដាក់ក្នុងកម្មវិធី</string>
+    <string name="about_title">អំពីកម្មវិធី</string>
+    <string name="about_version">ជំនាន់ 1.1.2 (Native Android)</string>
+    
+    <!-- Errors in Khmer -->
+    <string name="err_no_internet">គ្មានការតភ្ជាប់អ៊ីនធឺណិតទេ សូមពិនិត្យមើលបណ្តាញរបស់អ្នក</string>
+    <string name="err_phone_invalid">លេខទូរស័ព្ទមិនត្រឹមត្រូវទេ សូមបញ្ចូលលេខកូដប្រទេស (+855...)</string>
+    <string name="err_code_invalid">លេខកូដបញ្ជាក់ Telegram មិនត្រឹមត្រូវទេ</string>
+    <string name="err_code_expired">លេខកូដបញ្ជាក់បានផុតកំណត់ហើយ សូមស្នើសុំម្តងទៀត</string>
+    <string name="err_2fa_invalid">ពាក្យសម្ងាត់ 2FA មិនត្រឹមត្រូវទេ</string>
+    <string name="err_api_invalid">API ID ឬ API Hash មិនត្រឹមត្រូវទេ</string>
+    <string name="err_phone_banned">គណនី Telegram នេះត្រូវបាន Telegram Banned</string>
+    <string name="err_flood_wait">Telegram តម្រូវឱ្យរង់ចាំ %1$d វិនាទីមុនពេលបន្ត (FLOOD_WAIT)</string>
+</resources>
